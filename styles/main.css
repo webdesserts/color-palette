@@ -71,8 +71,8 @@ h2 {
   border: none;
   height: 3rem;
   width: 10rem;
+  margin-top: 1rem;
   cursor: pointer;
-  margin: 0 auto;
 }
 
 .palettes__add:hover {
@@ -100,11 +100,10 @@ h2 {
 }
 
 .palette-preview a {
-  margin: 0 auto;
 }
 
 .palette-preview__title {
-  margin: 0 auto .5em;
+  margin-bottom: .5em;
 }
 
 .palette-preview__swatches {
