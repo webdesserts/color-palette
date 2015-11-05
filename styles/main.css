@@ -1,0 +1,149 @@
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  margin-top: 0;
+  font-family: "Helvetica Neue";
+  background-color: #2d2b2d;
+  color: #eee;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.palette-editor {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.palette {
+  flex-basis: 100%;
+  display: flex;
+}
+
+.swatch {
+  display: block;
+  height: 5rem;
+  width: 5rem;
+  transition: 0.2s transform ease;
+  cursor: pointer;
+}
+
+.swatch.selected {
+  position: relative;
+  z-index: 2;
+  transform: scale(1.1);
+}
+
+.palettes {
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+}
+
+.palettes__add {
+  background-color: rgba(100%, 100%, 100%, .2);
+  font-size: 1rem;
+  color: white;
+  border: none;
+  height: 3rem;
+  width: 10rem;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.palettes__add:hover {
+  background-color: rgba(100%, 100%, 100%, .25);
+}
+.palettes__add:active {
+  background-color: rgba(100%, 100%, 100%, .15);
+}
+.palettes__add:focus { outline: none }
+
+.color-editor {
+  display: flex;
+  margin: 2rem;
+}
+
+.palette-page {
+  display: flex;
+  flex-flow: column;
+}
+
+.palette-preview {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 1rem 0;
+}
+
+.palette-preview a {
+  margin: 0 auto;
+}
+
+.palette-preview__title {
+  margin: 0 auto .5em;
+}
+
+.palette-preview__swatches {
+  display: flex;
+}
+
+.color-selector + .color-selector{
+  margin-left: 2rem;
+}
+
+.color-slider {
+  display: flex;
+  margin: .25rem 0;
+}
+
+.color-slider__label {
+  opacity: .5;
+  width: 1rem;
+  margin-right: .5rem;
+}
+
+.color-slider__textbox {
+  width: 3rem;
+  margin-right: 1rem;
+}
+
+.content > header {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100vw;
+  padding: 1rem;
+  background-color: rgba(100%,100%,100%, .2)
+}
+
+.content > header h1 {
+  font-size: 1.5rem;
+  margin: .5rem 0 0 auto;
+}
+
+.content > header a {
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+}
+.content > header a.active {
+  color: #f44b69;
+}
+
+.content > header a:hover {
+  color: skyblue;
+}
+
+.content > main {
+  width: 80vw;
+  max-width: 600px;
+  margin: 0 auto;
+}

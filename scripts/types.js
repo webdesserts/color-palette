@@ -1,0 +1,8 @@
+export const CREATE_PALETTE = 'CREATE_PALETTE';
+export const RENAME_PALETTE = 'RENAME_PALETTE';
+export const REMOVE_PALETTE = 'REMOVE_PALETTE';
+
+export const CREATE_COLOR = 'CREATE_COLOR';
+export const REMOVE_COLOR = 'REMOVE_COLOR';
+export const UPDATE_COLOR = 'UPDATE_COLOR';
+
