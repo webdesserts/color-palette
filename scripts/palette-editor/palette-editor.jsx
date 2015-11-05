@@ -5,7 +5,9 @@ import Immutable from 'immutable'
 
 export default React.createClass({
   propTypes: {
-    palette: PropTypes.instanceOf(Immutable.Map)
+    palette: PropTypes.instanceOf(Immutable.Map),
+    onColorUpdate: PropTypes.func,
+    onColorCreate: PropTypes.func,
   },
 
   getInitialState: function () {
@@ -21,7 +23,7 @@ export default React.createClass({
   },
 
   handleColorChange: function (color) {
-    this.props.onChange(this.state.selected, color)
+    this.props.onColorUpdate(this.state.selected, color)
   },
 
   render: function () {
@@ -35,6 +37,7 @@ export default React.createClass({
         <div className="palette-editor">
           <div className="palette">
             {palette}
+            <button onClick={this.props.onColorCreate} className="palette-editor__add-color">+</button>
           </div>
           <ColorEditor color={selected_color || null} onChange={this.handleColorChange}/>
         </div>

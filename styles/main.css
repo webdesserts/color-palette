@@ -24,6 +24,21 @@ h2 {
   align-items: center;
 }
 
+.palette-editor__add-color {
+  display: block;
+  color: white;
+  height: 5rem;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .2);
+}
+
+.palette-editor__add-color:hover {
+  background-color: rgba(0, 0, 0, .2);
+  box-shadow: inset 0 0 0 1px white;
+}
+
 .palette {
   flex-basis: 100%;
   display: flex;
