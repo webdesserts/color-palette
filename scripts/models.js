@@ -10,14 +10,19 @@ class IdGenerator {
 var paletteIds = new IdGenerator();
 var colorIds = new IdGenerator();
 
-let initialPalette = () => List(Color(), Color(), Color(), Color());
+function randomColor() {
+  let randomValue = () => Math.round(Math.random()*255);
+  return Color(randomValue(), randomValue(), randomValue())
+}
 
-function Palette(name, colors = initialPalette()) {
+let initialPalette = () => List([randomColor(), randomColor(), randomColor(), randomColor()]);
+
+function Palette(name, colors) {
   return new Map({
     id: paletteIds.next(),
     name: name,
-    colors: new List(colors).map((c) => Color(c.r, c.g, c.b))
-  })
+    colors: colors ? List(colors.map((c) => Color(c.r, c.g, c.b))) : initialPalette()
+  });
 }
 
 function Color(r=150, g=150, b=150, opts = {}) {
