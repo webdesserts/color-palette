@@ -3,29 +3,31 @@ import ColorSlider from './slider.jsx';
 import Immutable from 'immutable';
 import RgbSlider from './rgb-slider.jsx';
 import HslSlider from './hsl-slider.jsx';
-import WillChange from '../mixins/onChange.js';
 import * as convert from '../conversions.js';
 
-export default React.createClass({
-  mixins: [WillChange],
+export default class ColorEditor extends React.Component {
+  onChange = (color) => {
+    this.props.onChange(color);
+  }
 
-  propTypes: {
-    color: PropTypes.instanceOf(Immutable.Map)
-  },
-
-  render: function () {
+  render () {
     if (!this.props.color) {
-      return <div className="color-editor">Select a Color</div>
+      return <div className='color-editor'>Select a Color</div>
     }
     return (
-      <div className="color-editor">
+      <div className='color-editor'>
         <RgbSlider color={this.props.color} onChange={this.onChange}/>
         <HslSlider color={this.props.color} onChange={this.onChange}/>
       </div>
     )
-  },
-
-  onChange: function (color) {
-    this.props.onChange(color);
   }
-})
+}
+
+ColorEditor.propTypes = {
+  color: PropTypes.instanceOf(Immutable.Map),
+  onChange: PropTypes.func
+}
+
+ColorEditor.defaultProps = {
+  onChange() {}
+}

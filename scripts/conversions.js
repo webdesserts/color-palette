@@ -1,6 +1,6 @@
-export function hsl2rgb (hsl) {
-  let {h, s, l} = hsl;
-  var t1, t2, t3, rgb, val;
+export function hsl2rgb (hsl: { h: number, s: number, l: number }) : { r: number, g: number, b: number } {
+  let { h, s, l } = hsl;
+  let t1, t2, t3, rgb, val;
 
   h /= 360;
   s /= 100;
@@ -8,7 +8,7 @@ export function hsl2rgb (hsl) {
 
   if (s == 0) {
     val = Math.round(l * 255);
-    return {r:val, g:val, b:val};
+    return { r: val, g: val, b: val };
   }
 
   if (l < 0.5)
@@ -32,16 +32,14 @@ export function hsl2rgb (hsl) {
     else
       val = t1;
 
-
     rgb[i] = Math.round(val * 255);
-
   }
-  return {r: rgb[0], g: rgb[1], b: rgb[2]}
+  return { r: rgb[0], g: rgb[1], b: rgb[2] }
 }
 
-export function rgb2hsl (rgb) {
-  let {r, g, b} = rgb;
-  var h, s, l, min, max, delta;
+export function rgb2hsl (rgb: {r: number, g: number, b: number}) : {h: number, s: number, l: number} {
+  let { r, g, b } = rgb;
+  let h, s, l, min, max, delta;
 
   r /= 255;
   g /= 255;
@@ -71,8 +69,8 @@ export function rgb2hsl (rgb) {
   else
     s = delta / (2 - max - min);
 
-  s*= 100;
-  l*= 100;
+  s *= 100;
+  l *= 100;
 
-  return { h: h, s: s, l: l };
+  return { h, s, l };
 }

@@ -9,10 +9,10 @@ import Palettes from './pages/palettes.jsx'
 export default function Routes () {
   return (
     <Router>
-      <Route path="/" component={App}>
-        <Route path="palettes" component={Palettes} />
-        <Route path="palette/:id" component={Palette} />
-        <Route path="about" component={About} />
+      <Route path='/' component={App}>
+        <Route path='palettes' component={Palettes} />
+        <Route path='palette/:id' component={Palette} />
+        <Route path='about' component={About} />
       </Route>
     </Router>
   )
