@@ -21,4 +21,4 @@ export default function App ({ children }) {
         </div>
     </Provider>
   )
-};
+}

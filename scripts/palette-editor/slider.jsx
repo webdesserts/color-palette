@@ -3,6 +3,7 @@ import React, { PropTypes } from 'react'
 export default class Slider extends React.Component {
   static propTypes = {
     label: PropTypes.string,
+    value: PropTypes.oneOfType([ PropTypes.string, PropTypes.number ]),
     min: PropTypes.number,
     max: PropTypes.number,
     onChange: PropTypes.func
@@ -55,4 +56,4 @@ export default class Slider extends React.Component {
     )
   }
 
-};
+}
