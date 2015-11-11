@@ -6,6 +6,15 @@ import HslSlider from './hsl-slider.jsx';
 import * as convert from '../conversions.js';
 
 export default class ColorEditor extends React.Component {
+  static propTypes = {
+    color: PropTypes.instanceOf(Immutable.Map),
+    onChange: PropTypes.func
+  }
+
+  static defaultProps = {
+    onChange() {}
+  }
+
   onChange = (color) => {
     this.props.onChange(color);
   }
@@ -23,11 +32,4 @@ export default class ColorEditor extends React.Component {
   }
 }
 
-ColorEditor.propTypes = {
-  color: PropTypes.instanceOf(Immutable.Map),
-  onChange: PropTypes.func
-}
 
-ColorEditor.defaultProps = {
-  onChange() {}
-}
