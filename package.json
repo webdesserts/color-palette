@@ -15,13 +15,15 @@
     "lint-fix": "eslint app/scripts/{*,**/*}.{js,jsx} --fix"
   },
   "dependencies": {
+    "history": "^1.13.0",
     "immutable": "~3.7",
-    "isomorphic-fetch": "^2.2.0",
+    "isomorphic-fetch": "~2.2",
     "react": "~0.14",
     "react-dom": "~0.14",
     "react-redux": "~4.0",
     "react-router": "^1.0.0-rc4",
-    "redux": "~3.0.4"
+    "redux": "~3.0.4",
+    "redux-router": "^1.0.0-beta4"
   },
   "devDependencies": {
     "babel-eslint": "^4.1.5",
