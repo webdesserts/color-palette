@@ -9,6 +9,11 @@ import { createPalette } from '../store/actions/palette.js'
 import { Palette } from '../store/models.js'
 
 class Palettes extends React.Component {
+  static propTypes = {
+    palettes: PropTypes.instanceOf(Immutable.List),
+    dispatch: PropTypes.func.isRequired
+  }
+
   handleClick = () => {
     this.props.dispatch(createPalette(prompt('Palette Name:')))
   }
@@ -33,11 +38,6 @@ class Palettes extends React.Component {
       </div>
     )
   }
-}
-
-Palettes.propTypes = {
-  palettes: PropTypes.instanceOf(Immutable.List),
-  dispatch: PropTypes.func.isRequired
 }
 
 export default connect((state) => state)(Palettes)
