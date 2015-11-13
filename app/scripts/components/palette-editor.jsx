@@ -31,7 +31,7 @@ export default class PaletteEditor extends React.Component {
 
   render () {
     var palette = this.props.palette.get('colors').map((color, i) => (
-      <Swatch key={i} selected={this.state.selected === color} onSelect={this.handleSelect} color={color}/>
+      <Swatch key={i} selected={this.state.selectedId === color.get('id')} onSelect={this.handleSelect} color={color}/>
     ));
 
     let selected_color = this.props.palette.get('colors').find((color) => color.get('id') === this.state.selectedId);
