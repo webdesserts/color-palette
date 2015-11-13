@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react'
-import ColorSlider from './slider.jsx'
-import * as convert from '../conversions.js'
 import Immutable from 'immutable'
+
+import * as convert from '../conversions'
+import ColorSlider from './slider.jsx'
 
 export default class HSLSlider extends React.Component {
   static propTypes = {

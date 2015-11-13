@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react'
-import PaletteEditor from '../palette-editor/palette-editor.jsx'
-import Swatch from '../palette-editor/swatch.jsx'
 import { dispatch, connect } from 'react-redux'
-import { createPalette } from '../actions'
 import { Link } from 'react-router'
-import { Palette } from '../models.js'
 import Immutable from 'immutable'
+
+import PaletteEditor from '../components/palette-editor.jsx'
+import Swatch from '../components/swatch.jsx'
+import { createPalette } from '../store/actions/palette.js'
+import { Palette } from '../store/models.js'
 
 class Palettes extends React.Component {
   handleClick = () => {
@@ -39,4 +40,4 @@ Palettes.propTypes = {
   dispatch: PropTypes.func.isRequired
 }
 
-export default connect((state) => state.toObject())(Palettes)
+export default connect((state) => state)(Palettes)

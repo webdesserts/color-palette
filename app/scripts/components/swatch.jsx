@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
-import { Color } from '../models.js'
 import Immutable from 'immutable'
+
+import { Color } from '../store/models'
 
 export default class Swatch extends React.Component {
   static propTypes = {

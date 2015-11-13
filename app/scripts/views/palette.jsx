@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react'
-import PaletteEditor from '../palette-editor/palette-editor.jsx'
 import { connect } from 'react-redux'
-import { updateColor, createColor } from '../actions.js'
-import { Palette } from '../models.js'
 import Immutable from 'immutable'
+
+import PaletteEditor from '../components/palette-editor.jsx'
+import { updateColor, createColor } from '../store/actions/palette.js'
+import { Palette } from '../store/models.js'
 
 function Editor ({ dispatch, palettes, params }) {
   let palette = palettes.find((p) => p.get('id') == params.id);
@@ -25,9 +26,9 @@ function Editor ({ dispatch, palettes, params }) {
 }
 
 Editor.propTypes = {
-  palettes: PropTypes.instanceOf(Immutable.List),
+  palettes: React.PropTypes.instanceOf(Immutable.List),
   params: PropTypes.shape({ id: PropTypes.string }),
   dispatch: PropTypes.func
 }
 
-export default connect((state) => state.toObject())(Editor)
+export default connect((state) => state)(Editor)

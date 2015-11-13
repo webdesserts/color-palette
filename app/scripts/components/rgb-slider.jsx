@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
-import ColorSlider from './slider.jsx'
 import Immutable from 'immutable'
+
+import ColorSlider from './slider.jsx'
 
 export default class RGBSlider extends React.Component {
   static propTypes = {

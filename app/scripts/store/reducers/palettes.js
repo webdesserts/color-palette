@@ -1,9 +1,8 @@
-import * as types from './types.js'
-import { Palette, Color } from './models.js'
+import * as types from '../action-types'
+import { Palette, Color } from '../models.js'
 import Immutable from 'immutable'
 
-const initial = Immutable.fromJS({
-  palettes: [
+const initial = Immutable.fromJS([
     new Palette('Pretty Colors', [
       { r: 100, g: 120, b: 200 },
       { r: 220, g: 70,  b: 120 },
@@ -22,48 +21,47 @@ const initial = Immutable.fromJS({
       { r: 70,  g: 90, b: 30 },
       { r: 120, g: 100, b: 20 }
     ])
-  ]
-});
+]);
 
 function findPaletteIndex (state, id) {
-  return state.get('palettes').findIndex((p) => p.get('id') == id);
+  return state.findIndex((p) => p.get('id') == id);
 }
 
 function findColorIndex (palette, id) {
   return palette.get('colors').findIndex((c) => c.get('id') == id);
 }
 
-export function PaletteReducers (state = initial, action) {
+export default function PaletteReducers (state = initial, action) {
   switch (action.type) {
 
     case types.CREATE_PALETTE: {
-      return state.updateIn(['palettes'], (p) => p.push(new Palette(action.name)));
+      return state.update((p) => p.push(new Palette(action.name)));
     }
 
     case types.RENAME_PALETTE: {
       let i = findPaletteIndex(state, action.id);
-      return state.setIn(['palettes', i, 'name'], action.name);
+      return state.setIn([i, 'name'], action.name);
     }
 
     case types.REMOVE_PALETTE: {
       let i = findPaletteIndex(state, action.id);
-      return state.removeIn(['palettes', i]);
+      return state.remove(i);
     }
 
     case types.CREATE_COLOR: {
       let i = findPaletteIndex(state, action.palette_id);
-      return state.updateIn(['palettes', i, 'colors'], (c) => c.push(new Color()));
+      return state.updateIn([i, 'colors'], (c) => c.push(new Color()));
     }
 
     case types.UPDATE_COLOR: {
       let palette_index = findPaletteIndex(state, action.palette_id);
-      let color_index = findColorIndex(state.get('palettes').get(palette_index), action.color.get('id'));
-      return state.updateIn(['palettes', palette_index, 'colors', color_index], (color) => action.color);
+      let color_index = findColorIndex(state.get(palette_index), action.color.get('id'));
+      return state.updateIn([palette_index, 'colors', color_index], (color) => action.color);
     }
 
     case types.REMOVE_COLOR: {
       let i = findPaletteIndex(state, action.palette_id);
-      return state.deleteIn(['palettes', i, 'colors', action.index]);
+      return state.deleteIn([i, 'colors', action.index]);
     }
 
     default:

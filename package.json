@@ -3,20 +3,20 @@
   "version": "1.0.0",
   "description": "spike to see if we like react",
   "main": "index.js",
-  "scripts": {
-    "start": "npm run build && open index.html",
-    "dev": "npm run start && npm run watch",
-    "build": "browserify -t babelify scripts/main.js -d -o scripts.js",
-    "watch": "watchify -t babelify scripts/main.js -d -o scripts.js",
-    "test": "zuul --local --open -- ./scripts/**/__tests__/**/*.{js,jsx}",
-    "lint": "eslint scripts/{*,**/*}.{js,jsx}",
-    "lint-fix": "eslint scripts/{*,**/*}.{js,jsx} --fix"
-  },
   "author": "Michael C. Mullins",
   "license": "ISC",
+  "scripts": {
+    "start": "npm run build && open app/index.html",
+    "dev": "npm run start && npm run watch",
+    "build": "browserify -t [babelify envify] app/scripts/main.js -d -o app/scripts.js",
+    "watch": "watchify -t [babelify envify] app/scripts/main.js -d -o app/scripts.js",
+    "test": "zuul --local --open -- app/scripts/**/__tests__/**/*.{js,jsx}",
+    "lint": "eslint app/scripts/{*,**/*}.{js,jsx}",
+    "lint-fix": "eslint app/scripts/{*,**/*}.{js,jsx} --fix"
+  },
   "dependencies": {
-    "history": "~1.13",
     "immutable": "~3.7",
+    "isomorphic-fetch": "^2.2.0",
     "react": "~0.14",
     "react-dom": "~0.14",
     "react-redux": "~4.0",
@@ -28,12 +28,13 @@
     "babelify": "~6",
     "browserify": "~12.0",
     "chai": "~3.4",
+    "envify": "^3.4.0",
     "eslint": "^1.9.0",
     "eslint-plugin-babel": "^2.1.1",
     "eslint-plugin-react": "^3.8.0",
-    "jscs": "^2.5.1",
     "react-addons-test-utils": "~0.14",
-    "redux-devtools": "~2.1",
+    "redux-devtools": "^2.1.5",
+    "redux-devtools-diff-monitor": "^3.0.0",
     "watchify": "~3.4",
     "zuul": "~3.7"
   }

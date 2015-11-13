@@ -1,10 +1,8 @@
 import {Map, List} from 'immutable'
 
 class IdGenerator {
-  constructor () { this._lastId = 0; }
-  next () {
-    return this._lastId += 1;
-  }
+  _lastId = 0;
+  next = () => this._lastId += 1;
 }
 
 var paletteIds = new IdGenerator();
