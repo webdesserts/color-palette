@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
-import { routerStateReducer } from 'redux-router';
+import { routeReducer } from 'redux-simple-router';
 
 import palettes from './palettes'
 
 const reducer = combineReducers({
   palettes,
-  router: routerStateReducer
+  routing: routeReducer
 })
 
 export default reducer

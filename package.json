@@ -23,7 +23,7 @@
     "react-redux": "~4.0",
     "react-router": "^1.0.0-rc4",
     "redux": "~3.0.4",
-    "redux-router": "^1.0.0-beta4"
+    "redux-simple-router": "0.0.7"
   },
   "devDependencies": {
     "babel-eslint": "^4.1.5",

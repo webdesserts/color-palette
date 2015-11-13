@@ -1,16 +1,21 @@
 import React from 'react'
 import DOM from 'react-dom'
 import { Provider } from 'react-redux'
+import { createHistory } from 'history'
+import { syncReduxAndRouter } from 'redux-simple-router';
 
 import createStore from './store/index'
 import reducer from './store/reducers/index'
 import Routes from './routes.jsx'
 
 let store = createStore(reducer);
+let history = createHistory();
+
+syncReduxAndRouter(history, store)
 
 let app = (
   <Provider store={store}>
-    <Routes />
+    <Routes history={history}/>
   </Provider>
 )
 

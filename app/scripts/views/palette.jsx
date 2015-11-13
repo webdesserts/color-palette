@@ -6,8 +6,8 @@ import PaletteEditor from '../components/palette-editor.jsx'
 import { updateColor, createColor } from '../store/actions/palette.js'
 import { Palette } from '../store/models.js'
 
-function Editor ({ dispatch, palettes, params, router }) {
-  let palette = palettes.find((p) => p.get('id') == router.params.id);
+function Editor ({ dispatch, palettes, params }) {
+  let palette = palettes.find((p) => p.get('id') == params.id);
 
   if (!palette) {
     return <div>Can't find this Palette</div>
