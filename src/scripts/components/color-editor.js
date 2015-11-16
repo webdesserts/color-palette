@@ -2,9 +2,9 @@ import React, { PropTypes } from 'react'
 import Immutable from 'immutable';
 
 import * as convert from '../conversions';
-import ColorSlider from './slider.jsx';
-import RgbSlider from './rgb-slider.jsx';
-import HslSlider from './hsl-slider.jsx';
+import ColorSlider from './slider.js';
+import RgbSlider from './rgb-slider.js';
+import HslSlider from './hsl-slider.js';
 
 export default class ColorEditor extends React.Component {
   static propTypes = {

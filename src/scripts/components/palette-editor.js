@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react'
 import Immutable from 'immutable'
 
-import Swatch from './swatch.jsx'
-import ColorEditor from './color-editor.jsx'
+import Swatch from './swatch.js'
+import ColorEditor from './color-editor.js'
 
 export default class PaletteEditor extends React.Component {
   static propTypes = {

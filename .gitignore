@@ -1,3 +1,6 @@
 node_modules
 .idea
-scripts.js
+app/assets/main.js
+app/assets/main.js.map
+app/assets/main.css
+app/assets/main.css.map

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Router, Route, IndexRoute } from 'react-router'
 
-import App from './views/app.jsx'
-import About from './views/about.jsx'
-import Palette from './views/palette.jsx'
-import Palettes from './views/palettes.jsx'
+import App from './views/app.js'
+import About from './views/about.js'
+import Palette from './views/palette.js'
+import Palettes from './views/palettes.js'
 
 export default function Routes ({history}) {
   return (

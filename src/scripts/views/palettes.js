@@ -3,8 +3,8 @@ import { dispatch, connect } from 'react-redux'
 import { Link } from 'react-router'
 import Immutable from 'immutable'
 
-import PaletteEditor from '../components/palette-editor.jsx'
-import Swatch from '../components/swatch.jsx'
+import PaletteEditor from '../components/palette-editor.js'
+import Swatch from '../components/swatch.js'
 import { createPalette } from '../store/actions/palette.js'
 import { Palette } from '../store/models.js'
 

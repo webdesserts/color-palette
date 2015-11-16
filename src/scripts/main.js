@@ -6,7 +6,7 @@ import { syncReduxAndRouter } from 'redux-simple-router';
 
 import createStore from './store/index'
 import reducer from './store/reducers/index'
-import Routes from './routes.jsx'
+import Routes from './routes.js'
 
 let store = createStore(reducer);
 let history = createHistory();

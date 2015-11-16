@@ -32,11 +32,10 @@ h2 {
   cursor: pointer;
   background-color: transparent;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .2);
-}
-
-.palette-editor__add-color:hover {
-  background-color: rgba(0, 0, 0, .2);
-  box-shadow: inset 0 0 0 1px white;
+  &:hover {
+    background-color: rgba(0, 0, 0, .2);
+    box-shadow: inset 0 0 0 1px white;
+  }
 }
 
 .palette {
@@ -62,26 +61,20 @@ h2 {
   display: flex;
   flex-flow: column;
   align-content: center;
+  &__add{
+    background-color: rgba(100%, 100%, 100%, .2);
+    font-size: 1rem;
+    color: white;
+    border: none;
+    height: 3rem;
+    width: 10rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    &:hover { background-color: rgba(100%, 100%, 100%, .25); }
+    &:active { background-color: rgba(100%, 100%, 100%, .15); }
+    &:focus { outline: none }
+  }
 }
-
-.palettes__add {
-  background-color: rgba(100%, 100%, 100%, .2);
-  font-size: 1rem;
-  color: white;
-  border: none;
-  height: 3rem;
-  width: 10rem;
-  margin-top: 1rem;
-  cursor: pointer;
-}
-
-.palettes__add:hover {
-  background-color: rgba(100%, 100%, 100%, .25);
-}
-.palettes__add:active {
-  background-color: rgba(100%, 100%, 100%, .15);
-}
-.palettes__add:focus { outline: none }
 
 .color-editor {
   display: flex;
@@ -97,17 +90,8 @@ h2 {
   display: flex;
   flex-flow: column nowrap;
   margin: 1rem 0;
-}
-
-.palette-preview a {
-}
-
-.palette-preview__title {
-  margin-bottom: .5em;
-}
-
-.palette-preview__swatches {
-  display: flex;
+  &__title { margin-bottom: .5em; }
+  &__swatches { display: flex; }
 }
 
 .color-selector + .color-selector{
