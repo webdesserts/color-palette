@@ -2,9 +2,9 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Immutable from 'immutable'
 
-import PaletteEditor from '../components/palette-editor.js'
-import { updateColor, createColor } from '../store/actions/palette.js'
-import { Palette } from '../store/models.js'
+import PaletteEditor from './../components/palette-editor.js'
+import { updateColor, createColor } from '../../../store/palettes/action-creators.js'
+import { Palette } from '../../../store/palettes/models.js'
 
 class Editor extends React.Component {
    static propTypes = {

@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 import { routeReducer } from 'redux-simple-router';
 
-import palettes from './palettes'
+import palettes from './reducers'
 
 const reducer = combineReducers({
   palettes,

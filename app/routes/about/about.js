@@ -6,7 +6,7 @@ export default class About extends React.Component {
       <article>
         <h1>About Color Palette</h1>
         <p>
-          Palette Editor is an react experiment. We're using it as a way to find
+          Palette Editor is a react experiment. We're using it as a way to find
           out what React is good at and if we should use it at Integrity. It was
           developed with a slew of different technologies including, but not
           limited to, the following:
@@ -17,10 +17,10 @@ export default class About extends React.Component {
           <li>Jsx</li>
           <li>Redux</li>
           <li>Immutable.js</li>
-          <li>Mocha</li>
-          <li>Zuul</li>
           <li>Babel</li>
-          <li>Browserify</li>
+          <li>Webpack</li>
+          <li>Zuul</li>
+          <li>Mocha</li>
         </ul>
       </article>
     )

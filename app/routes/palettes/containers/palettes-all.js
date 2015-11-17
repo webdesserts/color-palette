@@ -3,10 +3,9 @@ import { dispatch, connect } from 'react-redux'
 import { Link } from 'react-router'
 import Immutable from 'immutable'
 
-import PaletteEditor from '../components/palette-editor.js'
-import Swatch from '../components/swatch.js'
-import { createPalette } from '../store/actions/palette.js'
-import { Palette } from '../store/models.js'
+import Swatch from '../../../common/components/swatch.js'
+import { createPalette } from '../../../store/palettes/action-creators.js'
+import { Palette } from '../../../store/palettes/models.js'
 
 class Palettes extends React.Component {
   static propTypes = {
@@ -21,10 +20,11 @@ class Palettes extends React.Component {
   render () {
     let palettes = this.props.palettes.map(function (p, i) {
       let swatches = p.get('colors').map((c, i) => <Swatch key={i} color={c}/>);
+      let path = `/palettes/${p.get('id')}`;
       return (
         <div key={i} className='palette-preview'>
           <div className='palette-preview__title'>{p.get('name')}</div>
-          <Link to={`/palette/${p.get('id')}`}>
+          <Link to={path}>
           <div className='palette-preview__swatches'>{swatches}</div>
           </Link>
         </div>

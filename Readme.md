@@ -11,3 +11,4 @@
 - [Introduction video for Redux](https://www.youtube.com/watch?v=xsSnOQynTHs)
 - [Component Composition as an alternative to Inheritance and Mixins](https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750)
 - [Project Structure Ideas](https://medium.com/lexical-labs-engineering/redux-best-practices-64d59775802e)
+- [Detailed Walkthrough with server-side implementation](http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html)

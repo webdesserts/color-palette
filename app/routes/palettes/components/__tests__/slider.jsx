@@ -1,8 +1,8 @@
 import { expect } from 'chai'
 import React from 'react'
-import * as util from '../../test-utils.js'
+import * as util from '../../../../common/test-utils.js'
+import { Color } from '../../../../store/palettes/models.js';
 import Slider from '../slider.js'
-import { Color } from '../../store/models.js';
 
 describe('Slider', function () {
   describe('label', function () {

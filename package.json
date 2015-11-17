@@ -7,13 +7,13 @@
   "license": "ISC",
   "scripts": {
     "start": "node devServer.js",
-    "build:sass": "node-sass --source-map=true src/styles/main.scss -o app/assets",
-    "watch:sass": "node-sass -w --source-map=true src/styles/main.scss -o app/assets",
+    "build:sass": "node-sass --source-map=true app/styles/main.scss -o app/assets",
+    "watch:sass": "node-sass -w --source-map=true app/styles/main.scss -o app/assets",
     "build": "npm run build:sass && npm run build:webpack",
     "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
-    "test": "NODE_ENV=test zuul --local --open -- src/scripts/**/__tests__/**/*.{js,jsx}",
-    "lint": "eslint src/scripts/{*,**/*}.{js,jsx}",
-    "lint-fix": "eslint src/scripts/{*,**/*}.{js,jsx} --fix"
+    "test": "NODE_ENV=test zuul --local --open -- app/**/__tests__/**/*.{js,jsx}",
+    "lint": "eslint app/{*,**/*}.{js,jsx}",
+    "lint-fix": "eslint app/{*,**/*}.{js,jsx} --fix"
   },
   "dependencies": {
     "history": "^1.13.0",
@@ -24,7 +24,8 @@
     "react-redux": "~4.0",
     "react-router": "~1",
     "redux": "~3.0.4",
-    "redux-simple-router": "0.0.7"
+    "redux-simple-router": "0.0.7",
+    "redux-thunk": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "~5",

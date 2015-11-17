@@ -1,6 +1,7 @@
-import * as types from '../action-types'
-import { Palette, Color } from '../models.js'
 import Immutable from 'immutable'
+
+import * as types from './action-types'
+import { Palette, Color } from './models.js'
 
 const initial = Immutable.fromJS([
     new Palette('Pretty Colors', [
